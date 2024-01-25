@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-# Script that prints some information about /rc/passwd
-FILE="/etc/passwd"
-while IFS=: read -r username _ uid _ _ home shell; do
-    printf "%s:%s:%s\n" "$username" "$uid" "$home"
-done < "$FILE"
