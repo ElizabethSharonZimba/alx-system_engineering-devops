@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#use kill
+#finds 4's PID and kills it
+kill "$(pgrep -f ./4-to_infinity_and_beyond)"
