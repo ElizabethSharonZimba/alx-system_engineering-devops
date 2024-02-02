@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-nc -lk localhost 98
+#98 localhost
+nc -l localhost 98
