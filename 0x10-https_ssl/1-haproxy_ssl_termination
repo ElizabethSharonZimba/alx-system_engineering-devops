@@ -33,16 +33,16 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend clickviral-frontend
+frontend berry-berry-tec-frontend
         bind *:80
-        bind *:443 ssl crt /etc/haproxy/certs/clickviral.tech.pem
+        bind *:443 ssl crt /etc/haproxy/certs/berry-berry.tech.pem
         mode http
         http-request redirect scheme https code 301 unless { ssl_fc }
         http-request set-header X_Forwarded-Proto http if !{ ssl_fc }
         http-request set-header X_Forwarded-Proto https if { ssl_fc }
-        default_backend clickviral-backend
+        default_backend berry-berry-backend
 
-backend clickviral-backend
+backend berry-berry-tec-backend
         balance roundrobin
         server 495391-web-01 54.160.107.191:80 check
         server 495391-web-02 34.229.67.157:80 check
