@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Find the PID of the master Gunicorn process
+MASTER_PID=$(ps aux | grep '[g]unicorn.*--workers' | awk '{print $2}')
+
+# Gracefully restart Gunicorn
+kill -s USR2 $MASTER_PID
+
+echo "Gunicorn restarted gracefully without downtime."
+
